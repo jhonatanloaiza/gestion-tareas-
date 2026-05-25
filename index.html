@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Tareas</title>
+    <link rel="stylesheet" href="base-tokens.css">
+    <link rel="stylesheet" href="layout.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav-bar" aria-label="Navegación principal">
+            <ul class="nav-bar__list">
+                <li class="nav-bar__item"><a href="#" class="nav-bar__link" aria-current="page">Inicio</a></li>
+                <li class="nav-bar__item"><a href="#" class="nav-bar__link">Mis Tareas</a></li>
+                <li class="nav-bar__item"><a href="#" class="nav-bar__link">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="task-creation" aria-labelledby="form-heading">
+            <h2 id="form-heading" class="task-creation__title">Crear Tarea</h2>
+            <form class="task-form">
+                <label for="titulo" class="task-form__label">Título de la tarea:</label>
+                <input type="text" id="titulo" name="titulo" class="task-form__input task-form__input--text" required aria-required="true">
+                
+                <label for="descripcion" class="task-form__label">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" class="task-form__input task-form__input--textarea"></textarea>
+                
+                <button type="submit" class="task-form__submit">Agregar</button>
+            </form>
+        </section>
+
+        <section class="tasks-container" aria-labelledby="list-heading">
+            <h2 id="list-heading" class="tasks-container__title">Lista de Tareas</h2>
+            
+            <!-- Tarea 1: Pendiente (sin modificador especial) -->
+            <article class="task-card">
+                <div class="task-card__header">
+                    <h3 class="task-card__title">Actualizar documentación</h3>
+                    <!-- Botón sin texto explícito usando icono/símbolo, por lo que requiere aria-label -->
+                    <button type="button" class="task-card__delete" aria-label="Eliminar tarea: Actualizar documentación">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <p class="task-card__description">Revisar y actualizar el README del proyecto con las nuevas instrucciones de instalación.</p>
+                <div class="task-card__actions">
+                    <!-- Uso de role="switch" y aria-checked para manejar accesibilidad de estados -->
+                    <button type="button" class="task-card__toggle" role="switch" aria-checked="false" aria-label="Marcar como completada: Actualizar documentación">
+                        Marcar completada
+                    </button>
+                </div>
+            </article>
+            
+            <!-- Tarea 2: Completada (con modificador BEM) -->
+            <article class="task-card task-card--completed">
+                <div class="task-card__header">
+                    <h3 class="task-card__title">Configurar repositorio</h3>
+                    <button type="button" class="task-card__delete" aria-label="Eliminar tarea: Configurar repositorio">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <p class="task-card__description">Inicializar git, crear rama principal y configurar el primer commit.</p>
+                <div class="task-card__actions">
+                    <button type="button" class="task-card__toggle" role="switch" aria-checked="true" aria-label="Desmarcar tarea: Configurar repositorio">
+                        Completada
+                    </button>
+                </div>
+            </article>
+            
+            <!-- Tarea 3: Alta prioridad (con modificador BEM) -->
+            <article class="task-card task-card--high-priority">
+                <div class="task-card__header">
+                    <h3 class="task-card__title">Corregir bug de login</h3>
+                    <button type="button" class="task-card__delete" aria-label="Eliminar tarea: Corregir bug de login">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <p class="task-card__description">Los usuarios no pueden acceder si la contraseña contiene caracteres especiales. Urgente.</p>
+                <div class="task-card__actions">
+                    <button type="button" class="task-card__toggle" role="switch" aria-checked="false" aria-label="Marcar como completada: Corregir bug de login">
+                        Marcar completada
+                    </button>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p class="app-footer__text">Gestión de Tareas &copy; 2026</p>
+    </footer>
+
+</body>
+</html>
