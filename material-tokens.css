@@ -1,0 +1,43 @@
+/* material-tokens.css */
+:root {
+    /* Colors - Material Design 3 (Light Theme) */
+    --bg-application: #FDFBFF; /* M3 Surface/Background (tono muy tenue) */
+    --bg-surface: #FFFFFF;
+    --bg-surface-variant: #E1E2EC; /* M3 Surface Variant */
+    --text-primary: #1A1B22; /* Alto contraste On-Surface */
+    --text-secondary: #44474E; /* On-Surface Variant */
+    --border-color: #C4C6D0; /* M3 Outline */
+    --color-primary: #0B57D0; /* M3 Primary - robust contrast >4.5:1 */
+    --color-accent: #B3261E; /* M3 Error / Accent */
+
+    /* Spacing and Borders */
+    --radius-card: 16px; /* M3 standard card radius */
+    --radius-input: 4px; /* Bordes ligeramente redondeados para inputs */
+    --radius-button: 100px; /* Botones capsulares */
+    
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+
+    /* Shadows and Depth (M3 Elevation) */
+    /* Level 1: Tarjetas en reposo */
+    --shadow-elevation-1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    /* Level 2: Tarjetas en hover (interacción) */
+    --shadow-elevation-2: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+    /* M3 no usa inner shadows comúnmente en inputs, prefiriendo flat backgrounds o borders */
+    --shadow-inner-1: none;
+
+    /* Typography - Roboto preferred */
+    --font-family-base: "Roboto", system-ui, -apple-system, sans-serif;
+    --font-size-sm: 0.875rem; /* 14px */
+    --font-size-base: 1rem; /* 16px */
+    --font-size-lg: 1.375rem; /* 22px */
+    --font-weight-regular: 400;
+    --font-weight-bold: 500; /* Medium emphasis preferred en M3 */
+
+    /* Special effects */
+    --backdrop-blur: blur(4px);
+    --backdrop-saturate: saturate(100%);
+    --transition-speed: 0.2s; /* Snappy transitions para micro-interacciones */
+}
