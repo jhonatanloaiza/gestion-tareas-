@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: var(--bg-application);
+    background: var(--bg-application); /* background soporta degradados */
     color: var(--text-primary);
     font-family: var(--font-family-base);
     font-size: var(--font-size-base);
@@ -26,6 +26,7 @@ body {
     top: 0;
     z-index: 10;
     backdrop-filter: var(--backdrop-blur) var(--backdrop-saturate);
+    -webkit-backdrop-filter: var(--backdrop-blur) var(--backdrop-saturate);
 }
 
 .nav-bar__list {
@@ -59,7 +60,6 @@ body {
     width: 100%;
 }
 
-/* Breakpoints estándar */
 @media (min-width: 768px) {
     .main-content {
         grid-template-columns: 1fr 1fr;
@@ -76,9 +76,12 @@ body {
 /* Formularios */
 .task-creation {
     background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
     border-radius: var(--radius-card);
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-elevation-1);
+    backdrop-filter: var(--backdrop-blur) var(--backdrop-saturate);
+    -webkit-backdrop-filter: var(--backdrop-blur) var(--backdrop-saturate);
 }
 
 .task-creation__title,
@@ -107,12 +110,15 @@ body {
     font-size: var(--font-size-base);
     color: var(--text-primary);
     box-shadow: var(--shadow-inner-1);
-    transition: border-color var(--transition-speed) ease;
+    transition: all var(--transition-speed) ease;
 }
 
+/* WCAG 2.2 Fix: Estado :focus más sólido para input */
 .task-form__input:focus {
     outline: none;
+    background-color: var(--bg-solid-focus, #ffffff);
     border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.3);
 }
 
 .task-form__input--textarea {
@@ -122,18 +128,19 @@ body {
 
 .task-form__submit {
     background-color: var(--color-primary);
-    color: var(--bg-surface);
+    color: #ffffff;
     border: none;
     border-radius: var(--radius-button);
     padding: var(--spacing-sm) var(--spacing-md);
     font-weight: var(--font-weight-bold);
     cursor: pointer;
-    transition: background-color var(--transition-speed) ease;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
     align-self: flex-start;
 }
 
 .task-form__submit:hover {
     background-color: var(--text-primary);
+    transform: translateY(-1px);
 }
 
 /* Lista de Tareas */
@@ -150,15 +157,19 @@ body {
     border-radius: var(--radius-card);
     padding: var(--spacing-md);
     box-shadow: var(--shadow-elevation-1);
-    transition: box-shadow var(--transition-speed) ease, transform var(--transition-speed) ease;
+    backdrop-filter: var(--backdrop-blur) var(--backdrop-saturate);
+    -webkit-backdrop-filter: var(--backdrop-blur) var(--backdrop-saturate);
+    transition: box-shadow var(--transition-speed) ease, transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
 }
 
+/* WCAG 2.2 Fix: Capa sólida en el :hover de la tarjeta para legibilidad superior */
 .task-card:hover {
     box-shadow: var(--shadow-elevation-2);
     transform: translateY(-2px);
+    background-color: var(--bg-solid-hover, rgba(255, 255, 255, 0.7));
 }
 
 .task-card__header {
@@ -204,11 +215,12 @@ body {
     font-weight: var(--font-weight-bold);
     color: var(--text-secondary);
     cursor: pointer;
-    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    transition: all var(--transition-speed) ease;
 }
 
 .task-card__toggle:hover {
-    background-color: var(--border-color);
+    background-color: var(--bg-solid-hover, #ffffff);
+    color: var(--text-primary);
 }
 
 /* Modificadores */
@@ -223,7 +235,7 @@ body {
 
 .task-card--completed .task-card__toggle {
     background-color: var(--text-primary);
-    color: var(--bg-surface);
+    color: #ffffff;
     border-color: var(--text-primary);
 }
 
@@ -238,6 +250,8 @@ body {
     padding: var(--spacing-md);
     text-align: center;
     margin-top: auto;
+    backdrop-filter: var(--backdrop-blur) var(--backdrop-saturate);
+    -webkit-backdrop-filter: var(--backdrop-blur) var(--backdrop-saturate);
 }
 
 .app-footer__text {

@@ -1,0 +1,52 @@
+/* glass-tokens.css */
+:root {
+    /* Colors - Glassmorphism */
+    /* Fondo vibrante orgánico para refractar el cristal */
+    --bg-application: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+    
+    /* Superficies translúcidas */
+    --bg-surface: rgba(255, 255, 255, 0.4);
+    --bg-surface-variant: rgba(255, 255, 255, 0.2);
+    
+    /* WCAG 2.2: Colores de fondo sólidos para estados accesibles (hover/focus) */
+    --bg-solid-focus: #ffffff;
+    --bg-solid-hover: rgba(255, 255, 255, 0.7);
+
+    /* Textos oscuros para alto contraste */
+    --text-primary: #1C1C1E; /* Apple Dark */
+    --text-secondary: #3A3A3C;
+    
+    /* Bordes finos simulando cristal */
+    --border-color: rgba(255, 255, 255, 0.5);
+    
+    --color-primary: #007AFF; /* Apple Link Blue */
+    --color-accent: #FF3B30; /* Apple Red */
+
+    /* Spacing and Borders */
+    --radius-card: 20px; /* Radios amplios tipo squircle */
+    --radius-input: 12px;
+    --radius-button: 12px;
+    
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+
+    /* Sombras difusas y amplias para sensación de flotabilidad */
+    --shadow-elevation-1: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    --shadow-elevation-2: 0 12px 48px 0 rgba(31, 38, 135, 0.12);
+    --shadow-inner-1: inset 0 0 0 1px rgba(255, 255, 255, 0.3); /* Reflejo interno */
+
+    /* Typography */
+    --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-weight-regular: 400;
+    --font-weight-bold: 600;
+
+    /* Glass Effects */
+    --backdrop-blur: blur(12px);
+    --backdrop-saturate: saturate(140%);
+    --transition-speed: 0.3s;
+}
