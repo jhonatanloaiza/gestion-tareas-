@@ -1,0 +1,93 @@
+/* clay-tokens.css */
+:root {
+    /* Fallback Light Mode (Claymorphism Soft) */
+    --bg-application: #EAEBF3;
+    --bg-surface: #F0F2F8;
+    --bg-surface-variant: #D9DCE8;
+    --bg-solid-focus: #FFFFFF;
+    --bg-solid-hover: #FFFFFF;
+    
+    --text-primary: #2C3040;
+    --text-secondary: #5A607A;
+    --border-color: transparent; /* El volumen elimina la necesidad de bordes */
+    
+    --color-primary: #5468FF;
+    --color-accent: #FF5470;
+
+    --radius-card: 28px; /* Formas muy redondeadas e infladas */
+    --radius-input: 16px;
+    --radius-button: 20px;
+    
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+
+    /* Clay Shadows - Light Mode */
+    --shadow-elevation-1: 
+        8px 8px 16px rgba(175, 182, 204, 0.6),
+        -4px -4px 12px rgba(255, 255, 255, 0.7),
+        inset -4px -4px 10px rgba(175, 182, 204, 0.4),
+        inset 4px 4px 8px rgba(255, 255, 255, 0.8);
+        
+    --shadow-elevation-2: 
+        12px 12px 24px rgba(175, 182, 204, 0.7),
+        -6px -6px 16px rgba(255, 255, 255, 0.9),
+        inset -4px -4px 10px rgba(175, 182, 204, 0.3),
+        inset 4px 4px 8px rgba(255, 255, 255, 0.9);
+        
+    --shadow-inner-1: 
+        inset 4px 4px 8px rgba(175, 182, 204, 0.5),
+        inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+
+    --font-family-base: "Nunito", "Quicksand", system-ui, sans-serif;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-weight-regular: 600; /* Mayor grosor para legibilidad táctil */
+    --font-weight-bold: 800;
+
+    --backdrop-blur: none;
+    --backdrop-saturate: none;
+    --transition-speed: 0.4s; /* Transición viscosa/esponjosa */
+}
+
+/* Claymorphism + Dark Mode Experimental */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Fondo profundo azulado/violeta, evitando negro puro para reducir fatiga visual */
+        --bg-application: #0D1121; 
+        --bg-surface: #161B33;
+        --bg-surface-variant: #1F2647;
+        --bg-solid-focus: #161B33;
+        --bg-solid-hover: #1A2140;
+
+        /* Texto de altísimo contraste */
+        --text-primary: #F8FAFC; 
+        --text-secondary: #94A3B8;
+
+        /* Colores primarios oscuros que pasan contraste WCAG con texto blanco */
+        --color-primary: #4F46E5; /* Indigo Profundo */
+        --color-accent: #E11D48; /* Rosa Rojizo */
+
+        /* Sombras Clay 3D + Reflejos Neón */
+        --shadow-elevation-1: 
+            10px 10px 24px rgba(0, 0, 0, 0.5),             /* Sombra externa (profundidad general) */
+            -4px -4px 12px rgba(31, 38, 71, 0.5),          /* Brillo externo superior (luz ambiental) */
+            inset -6px -6px 14px rgba(0, 0, 0, 0.6),       /* Inset oscuro (curvatura esférica inferior) */
+            inset 4px 4px 10px rgba(255, 255, 255, 0.06),  /* Inset claro (brillo de volumen superior) */
+            inset -3px -3px 12px rgba(0, 240, 255, 0.2);   /* Reflejo táctil Neón Cyan */
+            
+        --shadow-elevation-2: 
+            14px 14px 32px rgba(0, 0, 0, 0.6),
+            -6px -6px 16px rgba(31, 38, 71, 0.6),
+            inset -6px -6px 14px rgba(0, 0, 0, 0.7),
+            inset 4px 4px 12px rgba(255, 255, 255, 0.1),
+            inset -4px -4px 18px rgba(255, 0, 85, 0.35);   /* En el hover, el reflejo neón muta a Rosa brillante */
+            
+        --shadow-inner-1: 
+            inset 6px 6px 12px rgba(0, 0, 0, 0.6),         /* Input hundido en la arcilla (esquina superior) */
+            inset -4px -4px 10px rgba(31, 38, 71, 0.4),    /* Borde iluminado inferior del hueco */
+            inset 0 0 8px rgba(0, 240, 255, 0.1);          /* Suave ambiente cyan en el fondo del input */
+    }
+}
